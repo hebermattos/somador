@@ -1,4 +1,4 @@
-## Deploy contínuo de sites php na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com) <h2>
+## Deploy contínuo de sites php na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
 
 ### Teste unitário
 
