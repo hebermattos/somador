@@ -1,11 +1,9 @@
 <?php
 
-echo __FILE__;
-
-include(dirname(dirname(__FILE__))."/App/Src/ISomador.php");
-include(dirname(dirname(__FILE__))."/App/Src/Somador.php");
-include(dirname(dirname(__FILE__))."/App/Src/IBanco.php");
-include(dirname(dirname(__FILE__))."/App/Src/Banco.php");
+use App\Src\ISomador;
+use App\Src\Somador;
+use App\Src\IBanco;
+use App\Src\BancoFake;
 
 class SomadorTest extends PHPUnit_Framework_TestCase
 {    
