@@ -1,4 +1,4 @@
-## Deploy contínuo de sites php na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
+## Deploy contínuo do [Laravel](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
 
 ### Teste unitário
 
@@ -26,7 +26,7 @@ $ phantomjs tests/teste_integracao.js
 ``` 
 $ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
-$ git commit -m "deploy producção"
+$ git commit -m "deploy produção"
 $ git push rcumbler master --force
 ``` 
 
