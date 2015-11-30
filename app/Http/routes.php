@@ -13,5 +13,5 @@
 
 Route::get('/', 'IndexController@getForm');
 
-Route::get('/somas', 'SomadorController@getSomas');
+Route::post('/somas', 'SomadorController@getSomas');
 
