@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@getForm');
+
+Route::post('/soma', 'SomadorController@getSoma');
+
+Route::get('/somas', 'SomadorController@getSomas');
+
