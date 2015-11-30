@@ -23,7 +23,7 @@ function waitFor(testFx, onReady, timeOutMillis) {
 
 var page = require('webpage').create();
 
-page.open('http://localhost:8000/', function() {
+page.open('http://rc-phpnaumbler-com-br.umbler.net/public', function() {
 	console.log("abriu pagina...")
 
 	var passo1 = page.evaluate(function() {
