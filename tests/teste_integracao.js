@@ -4,23 +4,26 @@ function waitFor(testFx, onReady, timeOutMillis) {
         condition = false,
         interval = setInterval(function() {
             if ( (new Date().getTime() - start < maxtimeOutMillis) && !condition ) {
+                // If not time-out yet and condition not yet fulfilled
                 condition = (typeof(testFx) === "string" ? eval(testFx) : testFx()); //< defensive code
             } else {
                 if(!condition) {
-                    console.log("Valor da soma não econtrado");
+                    // If condition still not fulfilled (timeout but condition is 'false')
+                    console.log("Timeout!!");
                     phantom.exit(1);
                 } else {
-                    console.log("Calculou a soma em: " + (new Date().getTime() - start) + "ms.");
-                    typeof(onReady) === "string" ? eval(onReady) : onReady(); 
-                    clearInterval(interval); 
+                    // Condition fulfilled (timeout and/or condition is 'true')
+                    console.log("Finalizou em: " + (new Date().getTime() - start) + "ms.");
+                    typeof(onReady) === "string" ? eval(onReady) : onReady(); //< Do what it's supposed to do once the condition is fulfilled
+                    clearInterval(interval); //< Stop this interval
                 }
             }
-        }, 50); 
+        }, 250); //< repeat check every 250ms
 };
 
 var page = require('webpage').create();
 
-page.open('http://rc-phpnaumbler-com-br.umbler.net/', function() {
+page.open('http://localhost:8000/', function() {
 	console.log("abriu pagina...")
 
 	var passo1 = page.evaluate(function() {
@@ -44,7 +47,7 @@ page.open('http://rc-phpnaumbler-com-br.umbler.net/', function() {
 		console.log("alterou pagina "+url+"...");	
 		waitFor(function() {
 				return page.evaluate(function() {
-					return document.getElementById("resultado").innerText == 6;
+					return document.getElementsByTagName('span')[document.getElementsByTagName('span').length-1].innerText == 6.00;
 				});
 			}, function() {
 					console.log("resultado 6!");			   
