@@ -4,7 +4,7 @@ De acordo como [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.
 
 Basicamente, você deve ser capaz de colocar uma versão em produção somente com um clique de botão, onde a versão desejada vai passar por várias etapas de testes em um pipeline de implatação, colocando a mesma em produção caso passe com sucesso em todas as etapas.
 
-O deploy contínuo é um passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo de deploy, resultando em frequentes entregas de código em produção.
+O deploy contínuo é um passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo de deploy automaticamente, resultando em frequentes entregas de código em produção.
 
 No nosso exemplo, vamos criar um pipeline de implatação que é disparado a cada push na branch master de nossa aplicação laravel hospedada no github. Para excutar os passos do deploy, e por fim publicar na [umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
 
