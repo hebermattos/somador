@@ -14,6 +14,7 @@ $ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbl
 $ git add .
 $ git commit -m "deploy homologacao"
 $ git push rcumbler master --force
+$ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < replace_path.sh
 ``` 
 
 ### Teste de Integração
@@ -30,5 +31,6 @@ $ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.
 $ git add .
 $ git commit -m "deploy produção"
 $ git push rcumbler master --force
+$ ssh phpnaumbler.com.br@phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < replace_path.sh
 ``` 
 
