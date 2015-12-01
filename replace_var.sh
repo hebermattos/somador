@@ -4,8 +4,8 @@ dbdatabase = $DB_DATABASE
 dbusername = $DB_USERNAME
 dbpassword = $DB_PASSWORD
 
-sed -i 's/%APP_ENV%/$appenv/g' '.env'
-sed -i 's/%DB_HOST%/$dbhost/g' '.env'
-sed -i 's/%DB_DATABASE%/$dbdatabase/g' '.env'
-sed -i 's/%DB_USERNAME%/$dbusername/g' '.env'
-sed -i 's/%DB_PASSWORD%/$dbpassword/g' '.env'
+sed -i "s/%APP_ENV%/$appenv/" .env
+sed -i "s/%DB_HOST%/$dbhost/" .env
+sed -i "s/%DB_DATABASE%/$dbdatabase/" .env
+sed -i "s/%DB_USERNAME%/$dbusername/" .env
+sed -i "s/%DB_PASSWORD%/$dbpassword/" .env
