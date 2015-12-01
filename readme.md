@@ -9,6 +9,7 @@ $ phpunit --configuration phpunit.xml
 ### Deploy em Homologação
 
 ``` 
+$ . ./replace_var.sh
 $ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy homologacao"
@@ -24,6 +25,7 @@ $ phantomjs tests/teste_integracao.js
 ### Deploy em Produção
 
 ``` 
+$ . ./replace_var.sh
 $ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy produção"
