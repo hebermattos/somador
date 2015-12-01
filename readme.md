@@ -1,4 +1,4 @@
-# Deploy contínuo de aplicações [Laravel 5](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
+# Deploy contínuo de aplicações [Laravel 5](http://laravel.com/) na [Umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
 
 De acordo como [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.html), entrega contínua é uma prática de desenvolvimento onde o software é construido de um certo modo em que ele pode ser ser colocado em produção a qualquer momento.
 
