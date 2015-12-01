@@ -6,7 +6,7 @@ Basicamente, você deve ser capaz de colocar uma versão em produção somente c
 
 O deploy contínuo é um passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo deploy, resultando em frequentes entregas de código em produção.
 
-No nosso exemplo, vamos criar um pipeline de implatação para uma aplicação laravel hospedada no github. Para excutar os passos do deploy, e porfim publicar na [umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
+No nosso exemplo, vamos criar um pipeline de implatação para uma aplicação laravel hospedada no github. Para excutar os passos do deploy, e por fim publicar na [umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
 
 ### Teste unitário
 
