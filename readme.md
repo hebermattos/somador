@@ -1,4 +1,4 @@
-## Deploy contínuo do [Laravel](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
+## Entrega contínua de aplicações [Laravel](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
 
 ### Teste unitário
 
