@@ -1,6 +1,11 @@
-echo $APP_ENV
-sed -i 's/%APP_ENV%/$APP_ENV/g' '.env'
-sed -i 's/%DB_HOST%/$DB_HOST/g' '.env'
-sed -i 's/%DB_DATABASE%/$DB_DATABASE/g' '.env'
-sed -i 's/%DB_USERNAME%/$DB_USERNAME/g' '.env'
-sed -i 's/%DB_PASSWORD%/$DB_PASSWORD/g' '.env'
+appenv = $APP_ENV
+dbhost = $DB_HOST
+dbdatabase = $DB_DATABASE
+debusername = $DB_USERNAME
+dbpassword = $DB_PASSWORD
+
+sed -i 's/%APP_ENV%/${appenv}/g' '.env'
+sed -i 's/%DB_HOST%/${dbhost}/g' '.env'
+sed -i 's/%DB_DATABASE%/${dbdatabase}/g' '.env'
+sed -i 's/%DB_USERNAME%/${debusername}/g' '.env'
+sed -i 's/%DB_PASSWORD%/${dbpassword}/g' '.env'
