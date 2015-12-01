@@ -11,7 +11,7 @@ No nosso exemplo, vamos criar um pipeline de implatação que é disparado a cad
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
 
-
+Acima segue um exemplo de um pipeline no Snap-CI
 
 ### Testes Unitários
 
