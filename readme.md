@@ -1,10 +1,12 @@
-## Deploy contínua de aplicações [Laravel 5](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
+## Deploy contínuo de aplicações [Laravel 5](http://laravel.com/) na [umbler](https://www.umbler.com) utilizado [Snap CI](https:/https://snap-ci.com)
 
-De acordo como [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.html), entrega contínua é uma prática de desenvolvimento onde o software é construido de um certo modo em que ele pode ser ser colocado em produção a qualquer momento
+De acordo como [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.html), entrega contínua é uma prática de desenvolvimento onde o software é construido de um certo modo em que ele pode ser ser colocado em produção a qualquer momento.
 
-Basicamente, você deve ser capaz de colocar uma versão em produção somente com um clique de botão, onde a versão desejada vai passar por várias etapas de testes em um pipiline de implatação, colacondo a mesma em produção caso passe com sucesso em todas as etapas;
+Basicamente, você deve ser capaz de colocar uma versão em produção somente com um clique de botão, onde a versão desejada vai passar por várias etapas de testes em um pipiline de implatação, colacondo a mesma em produção caso passe com sucesso em todas as etapas.
 
-O deploy contínuo é uma passo à frente. Cada integração de alterações no repositório de código fonte dispara o nosso processo deploy, resultando em frequentes deploys.
+O deploy contínuo é uma passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo deploy, resultando em frequentes deploys.
+
+No nosso exemplo, vamos criar um pipeline de implatação para uma aplicação laravel hospedada no github. Para excutar os passos do deploy, e porfim publicar na [umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [thoughtworks](https://www.thoughtworks.com/).
 
 ### Teste unitário
 
