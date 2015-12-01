@@ -8,7 +8,7 @@ O deploy contínuo é um passo à frente. Cada integração de alterações no r
 
 No nosso exemplo, vamos criar um pipeline de implatação que é disparado a cada push na branch master de nossa aplicação laravel hospedada no github. Para excutar os passos do deploy, e por fim publicar na [umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
 
-### Teste unitário
+### Testes Unitários
 
 ``` 
 $ phpunit --configuration phpunit.xml
@@ -25,7 +25,7 @@ $ git push rcumbler master --force
 $ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < replace_path.sh
 ``` 
 
-### Teste de Integração
+### Testes de Integração
 
 ``` 
 $ phantomjs tests/teste_integracao.js
