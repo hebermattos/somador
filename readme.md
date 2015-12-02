@@ -46,10 +46,10 @@ para que o nosso script, antes de publicar, altera o *.env* para os valores dese
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcUmbler ssh://rc.phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
+$ git remote add rcumbler ssh://rc.phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
 $ git add .
 $ git commit -m "deploy homologacao"
-$ git push rcUmbler master --force
+$ git push rcumbler master --force
 $ ssh rc.phpnaUmbler.com.br@rc.phpnaUmbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
@@ -67,10 +67,10 @@ Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos 
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcUmbler ssh://phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
+$ git remote add rcumbler ssh://phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
 $ git add .
 $ git commit -m "deploy produção"
-$ git push rcUmbler master --force
+$ git push rcumbler master --force
 $ ssh phpnaUmbler.com.br@phpnaUmbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
