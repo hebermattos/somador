@@ -20,7 +20,7 @@ Nosso pipeline de implantação vai consistir em 4 etapas:
 3. Testes de integração
 4. Deploy em produção
 
-Para pode implementar estas etapas, nós criamos dois sites compartilhados PHP na [Umbler](https://www.umbler.com), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios regitrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
+Para pode implementar estas etapas, nós criamos dois sites compartilhados PHP na [Umbler](https://www.umbler.com), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
 
 ### Testes Unitários
 
