@@ -11,7 +11,7 @@ No nosso exemplo, vamos criar um pipeline de implantação que é disparado a ca
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
 
-Acima segue um exemplo de um pipeline no Snap-CI.
+- Pipeline no Snap-CI.
 
 Nosso pipeline de implantação vai consistir em 4 etapas:
 
@@ -20,7 +20,7 @@ Nosso pipeline de implantação vai consistir em 4 etapas:
 3. Testes de integração
 4. Deploy em produção
 
-Para pode implementar estas etapas, nós criamos dois sites compartilhados PHP na [Umbler](https://www.umbler.com), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
+Para pode implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
 
 ### Testes Unitários
 
