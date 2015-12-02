@@ -33,7 +33,7 @@ Nossa aplicação foi criada utlizando o [laragon](http://laragon.org/).
 
 ### Testes Unitários
 
-A nossa primeira etapa é a de [testes unitários](https://pt.wikipedia.org/wiki/Teste_de_unidade) porque esse processo é o mais rápido para se executar e de se conseguir um feedback. Testaremos a classe *[Somador](https://github.com/hebermattos/somador/blob/master/app/Src/Somador.php)*, que contém a regra de negócio de nossa aplicação e utilizaremos a classe *BancoFake* porque não queremos que nossos testes acessem o banco da dados (a *integração* como o banco de dados será testada mais à frente). Note que a classe recebe uma interface no construtor ([Injeção de dependência](https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_depend%C3%AAncia)), se tivessemos um "new Banco" dentro da classe não conseguiriamos utilizar um [dublê de teste](http://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs). Para rodar os testes do PHP, o [Snap CI](https:/https://snap-ci.com) no disponibiliza o [PHPUnit](https://phpunit.de/), bastando invoca-lo na linha de comando apontando para phpunit.xml que [já vem configurado no laravel](http://laravel.com/docs/5.1/testing):
+A nossa primeira etapa é a de [testes unitários](https://pt.wikipedia.org/wiki/Teste_de_unidade) porque esse processo é o mais rápido para se executar e de se conseguir um feedback. Testaremos a classe *[Somador](https://github.com/hebermattos/somador/blob/master/app/Src/Somador.php)*, que contém a regra de negócio de nossa aplicação e utilizaremos a classe *BancoFake* porque não queremos que nossos testes acessem o banco da dados (a *integração* como o banco de dados será testada mais à frente). Note que a classe recebe uma interface no construtor ([Injeção de dependência](https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_depend%C3%AAncia)), se tivessemos um "new Banco" dentro da classe não conseguiriamos utilizar um [dublê de teste](http://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs). Para rodar os testes do PHP, o [Snap CI](https:/https://snap-ci.com) no disponibiliza o [PHPUnit](https://phpunit.de/), bastando invocá-lo na linha de comando apontando para phpunit.xml que [já vem configurado no laravel](http://laravel.com/docs/5.1/testing):
 
 ``` 
 $ phpunit --configuration phpunit.xml
@@ -41,7 +41,7 @@ $ phpunit --configuration phpunit.xml
 
 ### Deploy em Homologação
 
-Se os nossos testes unitários passam, nosso pipeline procede para a próxima etapa. Nesta etapa precisamos configurar as [variáveis de ambiente no Snap CI](https://docs.snap-ci.com/pipeline/)
+Se os nossos testes unitários passarem, nosso pipeline procede para a próxima etapa. Nesta etapa precisamos configurar as [variáveis de ambiente no Snap CI](https://docs.snap-ci.com/pipeline/)
 para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na Umbler é só seguir [estes passos](http://help.Umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/). Com tudo configurado, podemos [publicar na Umbler](http://help.Umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) nossa versão de homologação, e após publicar, rodamos outro script para arrumar a estrutura, pois a [estrutura do laravel](http://laravel.com/docs/master/structure) mantem a maioria dos arquivos fora da pasta public.
 
 ``` 
