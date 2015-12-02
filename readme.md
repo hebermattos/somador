@@ -63,6 +63,8 @@ $ phantomjs tests/teste_integracao.js
 
 ### Deploy em Produção
 
+Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos *reduzidos*. O processo é igual ao da segunda etapa, somente alterando as variáveis configuradas no Snap:
+
 ``` 
 $ . ./alterar_variaveis.sh
 $ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
@@ -72,3 +74,8 @@ $ git push rcumbler master --force
 $ ssh phpnaumbler.com.br@phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
+### E depois?
+
+Outras práticas e ferramentas podem ser adotadas, variando muito da necessidade e gosto dos times:
+
+- Notificações: O próprio Snap se integra com [algumas ferramentas](https://docs.snap-ci.com/notifications/), como por exemplo o [Slack](https://slack.com/). Você poderia disparar notficações quando certos eventos, como por exemplo falhas no processo, ocorrerem.
