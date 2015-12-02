@@ -11,7 +11,7 @@ No nosso exemplo, vamos criar um pipeline de implantação que é disparado a ca
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
 
-- Pipeline no Snap-CI.
+*ipeline no Snap-CI.*
 
 Nosso pipeline de implantação vai consistir em 4 etapas:
 
