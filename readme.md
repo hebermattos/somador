@@ -55,7 +55,7 @@ $ ssh rc.phpnaUmbler.com.br@rc.phpnaUmbler-com-br.Umbler.net -p 9922 'bash -s' <
 
 ### Testes de Integração
 
-Com o nosso site publicado no ambiente de homologação, podemos aplicar os nossos [testes de integração](https://pt.wikipedia.org/wiki/Teste_de_integra%C3%A7%C3%A3o), que vão testar nosso sistema de ponta a ponta. Para realizar estes testes vamos utilizar o [PhantomJS](http://phantomjs.org/), que está disponível na linha de comando, assim como PHPUnit. O PhantomJS é um automatizador de browser que fornece uma API javascript para realizar os passos. O nosso teste consistirá em digitar valores na inferface, clicar no botão do formulário e verificar o resultado na próxima página:
+Com o nosso site publicado no ambiente de homologação, podemos aplicar os nossos [testes de integração](https://pt.wikipedia.org/wiki/Teste_de_integra%C3%A7%C3%A3o), que vão testar nosso sistema de ponta a ponta. Para realizar estes testes vamos utilizar o [PhantomJS](http://phantomjs.org/), que está disponível na linha de comando, assim como PHPUnit, bastando executá-lo com o nosso [arquivo javascript que contém os testes](https://github.com/hebermattos/somador/blob/master/tests/teste_integracao.js). O PhantomJS é um automatizador de browser que fornece uma API javascript para realizar os passos. O nosso teste consistirá em digitar valores na inferface, clicar no botão do formulário e verificar o resultado na próxima página:
 
 ``` 
 $ phantomjs tests/teste_integracao.js
