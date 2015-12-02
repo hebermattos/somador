@@ -80,6 +80,6 @@ Outras práticas e ferramentas podem ser adotadas, variando muito da necessidade
 
 - Notificações: O próprio Snap se integra com [algumas ferramentas](https://docs.snap-ci.com/notifications/), como por exemplo o [Slack](https://slack.com/). Você poderia disparar notificações quando certos eventos, como por exemplo falhas no processo, ocorrerem.
 
-- Testes de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade nos testes.
+- Testes de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade na execução.
 
 - Testes manuais: obviamente, testes manuais não são possíveis. para isso a *entrega contínua* é mais adequada. Na prática, você poderia utilizar somente os três primeiros passos, deixando o deploy em produção para outro momento.
