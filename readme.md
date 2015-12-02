@@ -22,7 +22,7 @@ Nosso pipeline de implantação vai consistir em 4 etapas:
 
 Para pode implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
 
-O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis, estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa, através no nosso script *alterar_variaveis.sh*.
+O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis, estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script *alterar_variaveis.sh*.
 
 ### Testes Unitários
 
