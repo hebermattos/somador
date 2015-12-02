@@ -29,7 +29,7 @@ Nossa aplicação foi criada utlizando o [laragon](http://laragon.org/).
 ![Snap-CI Stage]
 (https://blog.snap-ci.com/assets/images/screenshots/clojure/04-configure.png)
 
-*Exemplos de configuração de etapa no Snap*
+*Exemplo de configuração de etapa no Snap*
 
 ### Testes Unitários
 
