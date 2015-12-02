@@ -63,7 +63,7 @@ $ phantomjs tests/teste_integracao.js
 
 ### Deploy em Produção
 
-Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos *reduzidos*. O processo é igual ao da segunda etapa, somente alterando as variáveis configuradas no Snap:
+Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos *reduzidos*. O processo é igual ao da segunda etapa, somente alterando as variáveis configuradas no Snap e os nossos endereços de SSH:
 
 ``` 
 $ . ./alterar_variaveis.sh
