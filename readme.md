@@ -27,7 +27,7 @@ O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. 
 Nossa aplicação foi criada utlizando o [laragon](http://laragon.org/).
 
 ![Snap-CI Stage]
-(https://www.google.com.br/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwiA75CI2r3JAhWMkZAKHeA8AtYQjRwIBw&url=https%3A%2F%2Fblog.snap-ci.com%2Fblog%2F2014%2F09%2F23%2Fbuilding-clojure-projects-on-snap%2F&bvm=bv.108538919,d.Y2I&psig=AFQjCNGkomIERhciv4uhRFJDpzQ7Tvib2w&ust=1449163784526720)
+(https://blog.snap-ci.com/assets/images/screenshots/clojure/04-configure.png)
 
 *Exemplos de configuração de etapa no Snap*
 
