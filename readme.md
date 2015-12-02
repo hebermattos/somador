@@ -1,4 +1,4 @@
-# Deploy contínuo de aplicações [Laravel 5](http://laravel.com/) na [Umbler](https://www.umbler.com) utilizando [Snap CI](https://snap-ci.com)
+# Deploy contínuo de aplicações [Laravel 5](http://laravel.com/) na [Umbler](https://www.Umbler.com) utilizando [Snap CI](https://snap-ci.com)
 
 De acordo com [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.html), entrega contínua é uma prática de desenvolvimento onde o software é construído de um certo modo em que ele pode ser colocado em produção a qualquer momento.
 
@@ -6,21 +6,21 @@ Basicamente, você deve ser capaz de colocar uma versão em produção somente c
 
 O deploy contínuo é um passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo de deploy automaticamente, resultando em frequentes entregas de código em produção.
 
-Para exemplificar, vamos criar um pipeline de implantação que é disparado a cada push na branch master de nossa aplicação laravel *Somador* hospedada no github. Para executar os passos do deploy, e por fim publicar na [Umbler](https://www.umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta de integração contínua [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
+Para exemplificar, vamos criar um pipeline de implantação que é disparado a cada push na branch master de nossa aplicação laravel *Somador* hospedada no github. Para executar os passos do deploy, e por fim publicar na [Umbler](https://www.Umbler.com), vamos utlizar o [Snap CI](https:/https://snap-ci.com), que é uma ferramenta de integração contínua [SaaS](https://en.wikipedia.org/wiki/Software_as_a_service) criada pela [Thoughtworks](https://www.thoughtworks.com/) que se integra naturalmente com o github.
 
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
 
 *Pipeline no Snap-CI.*
 
-Nosso pipeline de implantação vai consistir em 4 etapas:
+Nosso pipeline de implantação vai consistir em quatro etapas:
 
 1. Testes de unidade
 2. Deploy em ambiente de homologação
 3. Testes de integração
 4. Deploy em produção
 
-Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários que a própria umbler fornece (meusite-com-br.umbler.net).
+Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.Umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaUmbler.com.br, que servirá como ambiente de homologação, e o phpnaUmbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários que a própria Umbler fornece (meusite-com-br.Umbler.net).
 
 O Laravel utiliza o arquivo *[.env](https://github.com/hebermattos/somador/blob/master/.env)* para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis. Estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script *alterar_variaveis.sh*.
 
@@ -42,15 +42,15 @@ $ phpunit --configuration phpunit.xml
 ### Deploy em Homologação
 
 Se os nossos testes unitários passam, nosso pipeline procede para a próxima etapa. Nesta etapa precisamos configurar as [variáveis de ambiente no Snap CI](https://docs.snap-ci.com/pipeline/)
-para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na umbler é só seguir [estes passos](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/). Com tudo configurado, podemos [publicar na Umbler](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) nossa versão de homologação, e após publicar, rodamos outro script para arrumar a estrutura, pois a [estrutura do laravel](http://laravel.com/docs/master/structure) mantem a maioria dos arquivos fora da pasta public.
+para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na Umbler é só seguir [estes passos](http://help.Umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/). Com tudo configurado, podemos [publicar na Umbler](http://help.Umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) nossa versão de homologação, e após publicar, rodamos outro script para arrumar a estrutura, pois a [estrutura do laravel](http://laravel.com/docs/master/structure) mantem a maioria dos arquivos fora da pasta public.
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
+$ git remote add rcUmbler ssh://rc.phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
 $ git add .
 $ git commit -m "deploy homologacao"
-$ git push rcumbler master --force
-$ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
+$ git push rcUmbler master --force
+$ ssh rc.phpnaUmbler.com.br@rc.phpnaUmbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
 ### Testes de Integração
@@ -67,11 +67,11 @@ Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos 
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
+$ git remote add rcUmbler ssh://phpnaUmbler.com.br@rc-phpnaUmbler-com-br.Umbler.net:9922/~/git/rc-phpnaUmbler-com-br.git
 $ git add .
 $ git commit -m "deploy produção"
-$ git push rcumbler master --force
-$ ssh phpnaumbler.com.br@phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
+$ git push rcUmbler master --force
+$ ssh phpnaUmbler.com.br@phpnaUmbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
 ### E depois?
