@@ -10,6 +10,7 @@ No nosso exemplo, vamos criar um pipeline de implantação que é disparado a ca
 
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
+
 *Pipeline no Snap-CI.*
 
 Nosso pipeline de implantação vai consistir em 4 etapas:
@@ -25,6 +26,7 @@ O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. 
 
 ![Snap-CI Shell]
 (https://docs.snap-ci.com/assets/images/non-retina/screenshots/getting-started/build-plan-edit-3fb0c192.png)
+
 *Exemplos de comandos sendo executados no shell do Snap*
 
 ### Testes Unitários
