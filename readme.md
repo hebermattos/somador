@@ -34,6 +34,9 @@ $ phpunit --configuration phpunit.xml
 
 ### Deploy em Homologação
 
+Se os nossos testes unitários passam, nosso pipeline procede para a próxima etapa. Nesta etapa precisamos configurar as [variáveis de ambiente no Snap CI](https://docs.snap-ci.com/pipeline/)
+para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na umbler é só seguir [estes passos](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/):
+
 ``` 
 $ . ./alterar_variaveis.sh
 $ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
