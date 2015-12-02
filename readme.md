@@ -42,7 +42,7 @@ $ phpunit --configuration phpunit.xml
 ### Deploy em Homologação
 
 Se os nossos testes unitários passam, nosso pipeline procede para a próxima etapa. Nesta etapa precisamos configurar as [variáveis de ambiente no Snap CI](https://docs.snap-ci.com/pipeline/)
-para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na umbler é só seguir [estes passos](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/). Com tudo configurado, [podemos publicar a Umbler](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) nossa versão de homologação, e após publicar, rodamos outro script para arrumar a estrutura, pois a [estrutura do laravel](http://laravel.com/docs/master/structure) mantem a maioria dos arquivos fora da pasta public.
+para que o nosso script, antes de publicar, altera o *.env* para os valores desejados. Para configurar o Git na umbler é só seguir [estes passos](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) e [adicionar a chave privada do SSH gerada no Snap](https://docs.snap-ci.com/getting-started/ssh-keys/). Com tudo configurado, podemos [publicar na Umbler](http://help.umbler.com/hc/pt-br/articles/205713329-Configurando-e-acessando-Git) nossa versão de homologação, e após publicar, rodamos outro script para arrumar a estrutura, pois a [estrutura do laravel](http://laravel.com/docs/master/structure) mantem a maioria dos arquivos fora da pasta public.
 
 ``` 
 $ . ./alterar_variaveis.sh
