@@ -23,12 +23,7 @@ class BancoProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {	
-		if ($this->app->environment('teste')){
-			$this->app->bind('App\Src\IBanco', 'App\Src\BancoFake');
-		}
-		else {
-			$this->app->bind('App\Src\IBanco', 'App\Src\Banco');
-		}	
+    {
+		$this->app->bind('App\Src\IBanco', 'App\Src\Banco');		
     }
 }
