@@ -82,4 +82,4 @@ Outras práticas e ferramentas podem ser adotadas, variando muito da necessidade
 
 - Testes de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade nos testes.
 
-- Testes manuais: obviamente, testes manuais não são possiveis. para isso a *entrega contínua* é mais adequada. Na prática, você poderia utlizar somente os três primeiros passos, deixando o deploy de produção para outro momento.
+- Testes manuais: obviamente, testes manuais não são possiveis. para isso a *entrega contínua* é mais adequada. Na prática, você poderia utlizar somente os três primeiros passos, deixando o deploy em produção para outro momento.
