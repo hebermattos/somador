@@ -55,7 +55,7 @@ $ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' <
 
 ### Testes de Integração
 
-Com o nosso site publicado no ambiente d homologação, podemos aplicar os nossos [testes de integração](), que vão testar nosso sitema de ponta a ponta
+Com o nosso site publicado no ambiente de homologação, podemos aplicar os nossos [testes de integração](https://pt.wikipedia.org/wiki/Teste_de_integra%C3%A7%C3%A3o), que vão testar nosso sitema de ponta a ponta. Para realizar estes testes vamos utilizar o [PhantomJS](http://phantomjs.org/), que está disponivel na linha de comando, assim como PHPUnit.
 
 ``` 
 $ phantomjs tests/teste_integracao.js
