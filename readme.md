@@ -20,9 +20,17 @@ Nosso pipeline de implantação vai consistir em 4 etapas:
 3. Testes de integração
 4. Deploy em produção
 
+### Infraestrutura
+
 Para pode implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
 
+### Variáveis de ambiente
+
+O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis, estas serão substituidas pelo valores adequados em cada etapa pelo [Snap CI](https://docs.snap-ci.com/pipeline/) através no nosso script *alterar_variaveis.sh*.
+
 ### Testes Unitários
+
+A nossoa primeira etapa é a de testes unitários porque esse processo é o mais rápido para se executar e se conseguir um feedback. Testaremos a classe *Somador*, que contém a regra de negócio de nossa aplicação e utilizaremos a classe *BancoFake* porque não queremos que nossos testes acessem o banco da dados (a *integração* como o banco de dados será testada mais à frente). Note que a classe *Somador* recebe uma interface no construtor, se tivessemos um "new Banco" dentro da classe não conseguiriamos utilizar um [dublê de teste](http://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs). para isso  O [Snap CI](https:/https://snap-ci.com no disponibilza o [PHPUnit](https://phpunit.de/) CONT.
 
 ``` 
 $ phpunit --configuration phpunit.xml
@@ -31,7 +39,7 @@ $ phpunit --configuration phpunit.xml
 ### Deploy em Homologação
 
 ``` 
-$ . ./replace_var.sh
+$ . ./alterar_variaveis.sh
 $ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy homologacao"
@@ -48,7 +56,7 @@ $ phantomjs tests/teste_integracao.js
 ### Deploy em Produção
 
 ``` 
-$ . ./replace_var.sh
+$ . ./alterar_variaveis.sh
 $ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy produção"
