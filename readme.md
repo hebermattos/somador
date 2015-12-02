@@ -80,4 +80,4 @@ Outras práticas e ferramentas podem ser adotadas, variando muito da necessidade
 
 - Notificações: O próprio Snap se integra com [algumas ferramentas](https://docs.snap-ci.com/notifications/), como por exemplo o [Slack](https://slack.com/). Você poderia disparar notficações quando certos eventos, como por exemplo falhas no processo, ocorrerem.
 
-- Tested de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade nos testes.
+- Testes de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade nos testes.
