@@ -10,7 +10,6 @@ No nosso exemplo, vamos criar um pipeline de implantação que é disparado a ca
 
 ![Snap-CI Pipeline]
 (https://blog.snap-ci.com/assets/screenshots/trunk-based-development/pipeline-history-ed50984c905f1b33f9ca55d2806a8ec9.jpg)
-
 *Pipeline no Snap-CI.*
 
 Nosso pipeline de implantação vai consistir em 4 etapas:
@@ -23,6 +22,10 @@ Nosso pipeline de implantação vai consistir em 4 etapas:
 Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários (meusite-com-br.umbler.net).
 
 O Laravel utiliza o arquivo *.env* para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis. Estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script *alterar_variaveis.sh*.
+
+![Snap-CI Shell]
+(https://docs.snap-ci.com/assets/images/non-retina/screenshots/getting-started/build-plan-edit-3fb0c192.png)
+*Exemplos de comandos sendo executados no shell do Snap*
 
 ### Testes Unitários
 
