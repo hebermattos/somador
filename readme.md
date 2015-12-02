@@ -20,7 +20,7 @@ Nosso pipeline de implantação vai consistir em quatro etapas:
 3. Testes de integração
 4. Deploy em produção
 
-Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.Umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários que a própria Umbler fornece (meusite-com-br.Umbler.net).
+Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.Umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários que a própria Umbler fornece (meusite-com-br.umbler.net).
 
 O Laravel utiliza o arquivo [.env](https://github.com/hebermattos/somador/blob/master/.env) para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis. Estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script *alterar_variaveis.sh*.
 
@@ -46,11 +46,11 @@ para que o nosso script, antes de publicar, altera o *.env* para os valores dese
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.Umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
+$ git remote add rcumbler ssh://rc.phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy homologacao"
 $ git push rcumbler master --force
-$ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
+$ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
 ### Testes de Integração
@@ -67,11 +67,11 @@ Por fim, podemos publicar em ambiente de produção, com uma garantia de riscos 
 
 ``` 
 $ . ./alterar_variaveis.sh
-$ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.Umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
+$ git remote add rcumbler ssh://phpnaumbler.com.br@rc-phpnaumbler-com-br.umbler.net:9922/~/git/rc-phpnaumbler-com-br.git
 $ git add .
 $ git commit -m "deploy produção"
 $ git push rcumbler master --force
-$ ssh phpnaumbler.com.br@phpnaumbler-com-br.Umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
+$ ssh phpnaumbler.com.br@phpnaumbler-com-br.umbler.net -p 9922 'bash -s' < corrigir_caminho_laravel.sh
 ``` 
 
 ### E depois?
