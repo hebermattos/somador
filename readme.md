@@ -33,7 +33,7 @@ Nossa aplicação foi criada utlizando o [laragon](http://laragon.org/).
 
 ### Testes Unitários
 
-A nossoa primeira etapa é a de testes unitários porque esse processo é o mais rápido para se executar e de se conseguir um feedback. Testaremos a classe *Somador*, que contém a regra de negócio de nossa aplicação e utilizaremos a classe *BancoFake* porque não queremos que nossos testes acessem o banco da dados (a *integração* como o banco de dados será testada mais à frente). Note que a classe *Somador* recebe uma interface no construtor ([Injeção de dependência](https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_depend%C3%AAncia)), se tivessemos um "new Banco" dentro da classe não conseguiriamos utilizar um [dublê de teste](http://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs). Para rodar os testes do PHP, o [Snap CI](https:/https://snap-ci.com) no disponibilza o [PHPUnit](https://phpunit.de/), bastando invoca-lo na linha de comando apontado para phpunit.xml que [já vem configurado no laravel](http://laravel.com/docs/5.1/testing):
+A nossoa primeira etapa é a de [testes unitários](https://pt.wikipedia.org/wiki/Teste_de_unidade) porque esse processo é o mais rápido para se executar e de se conseguir um feedback. Testaremos a classe *Somador*, que contém a regra de negócio de nossa aplicação e utilizaremos a classe *BancoFake* porque não queremos que nossos testes acessem o banco da dados (a *integração* como o banco de dados será testada mais à frente). Note que a classe *Somador* recebe uma interface no construtor ([Injeção de dependência](https://pt.wikipedia.org/wiki/Inje%C3%A7%C3%A3o_de_depend%C3%AAncia)), se tivessemos um "new Banco" dentro da classe não conseguiriamos utilizar um [dublê de teste](http://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs). Para rodar os testes do PHP, o [Snap CI](https:/https://snap-ci.com) no disponibilza o [PHPUnit](https://phpunit.de/), bastando invoca-lo na linha de comando apontado para phpunit.xml que [já vem configurado no laravel](http://laravel.com/docs/5.1/testing):
 
 ``` 
 $ phpunit --configuration phpunit.xml
@@ -55,7 +55,7 @@ $ ssh rc.phpnaumbler.com.br@rc.phpnaumbler-com-br.umbler.net -p 9922 'bash -s' <
 
 ### Testes de Integração
 
-Com o nosso site publicado no ambiente de homologação, podemos aplicar os nossos [testes de integração](https://pt.wikipedia.org/wiki/Teste_de_integra%C3%A7%C3%A3o), que vão testar nosso sistema de ponta a ponta. Para realizar estes testes vamos utilizar o [PhantomJS](http://phantomjs.org/), que está disponivel na linha de comando, assim como PHPUnit. O PhantomJS é um automatizador de browser que fornece uma API javascript para realizar os passos. O nosso teste consistirá em digitar valores na inferface, clicar no botao e verificar o resultado na próxima página.
+Com o nosso site publicado no ambiente de homologação, podemos aplicar os nossos [testes de integração](https://pt.wikipedia.org/wiki/Teste_de_integra%C3%A7%C3%A3o), que vão testar nosso sistema de ponta a ponta. Para realizar estes testes vamos utilizar o [PhantomJS](http://phantomjs.org/), que está disponivel na linha de comando, assim como PHPUnit. O PhantomJS é um automatizador de browser que fornece uma API javascript para realizar os passos. O nosso teste consistirá em digitar valores na inferface, clicar no botao e verificar o resultado na próxima página:
 
 ``` 
 $ phantomjs tests/teste_integracao.js
