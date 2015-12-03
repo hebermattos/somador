@@ -2,7 +2,7 @@
 
 De acordo com [Martin fowler](http://martinfowler.com/bliki/ContinuousDelivery.html), entrega contínua é uma prática de desenvolvimento onde o software é construído de um certo modo em que ele pode ser colocado em produção a qualquer momento.
 
-Basicamente, você deve ser capaz de colocar uma versão em produção somente com um clique, onde a versão desejada vai passar por várias etapas de testes em um pipeline de implatação, colocando a mesma em produção caso passe com sucesso em todas as etapas.
+Basicamente, você deve ser capaz de colocar uma versão em produção somente com um clique, onde a versão desejada vai passar por várias etapas de testes em um pipeline de implantação, colocando a mesma em produção caso passe com sucesso em todas as etapas.
 
 O deploy contínuo é um passo à frente. Cada integração de alterações no repositório de código fonte dispara um novo processo de deploy automaticamente, resultando em frequentes entregas de código em produção.
 
@@ -22,7 +22,7 @@ Nosso pipeline de implantação vai consistir em quatro etapas:
 
 Para poder implementar estas etapas, nós criamos dois [sites compartilhados PHP na Umbler](https://www.Umbler.com/br/hospedagem-de-sites), cada um com seu respectivo banco de dados: rc.phpnaumbler.com.br, que servirá como ambiente de homologação, e o phpnaumbler.com.br, que será nosso ambiente de produção. Como não temos domínios registrados, os sites serão acessados através dos endereços temporários que a própria Umbler fornece (meusite-com-br.umbler.net).
 
-O Laravel utiliza o arquivo [.env](https://github.com/hebermattos/somador/blob/master/.env) para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis. Estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script *alterar_variaveis.sh*.
+O Laravel utiliza o arquivo [.env](https://github.com/hebermattos/somador/blob/master/.env) para guardar as configurações de ambiente. Como você pode notar no nosso exemplo, as configurações de banco de dados e o nome do ambiente no arquivo versionado estão com variáveis. Estas serão substituidas por valores [configurados no próprio Snap CI](https://docs.snap-ci.com/pipeline/) para cada etapa através do script [alterar_variaveis.sh](https://github.com/hebermattos/somador/blob/master/alterar_variaveis.sh).
 
 Nossa aplicação foi criada utlizando o [laragon](http://laragon.org/).
 
@@ -82,4 +82,4 @@ Outras práticas e ferramentas podem ser adotadas, variando muito da necessidade
 
 - Testes de integração: é interessando limpar o banco de dados, ou mesmo garantir um certo conjunto de dados, antes de rodar testes que causam alterações, garantindo assim uma maior integridade na execução.
 
-- Testes manuais: obviamente, testes manuais não são possíveis. para isso a *entrega contínua* é mais adequada. Na prática, você poderia utilizar somente os três primeiros passos, deixando o deploy em produção para outro momento.
+- Testes manuais: obviamente, testes manuais não são possíveis. para isso a Entrega Contínua é mais adequada. Na prática, você poderia utilizar somente os três primeiros passos, deixando o deploy em produção para outro momento.
